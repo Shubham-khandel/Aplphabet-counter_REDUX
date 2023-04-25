@@ -1,15 +1,17 @@
+
 import React from "react";
 import Button from "./Components/Button";
-import Style from "./App.module.scss";
 import { increaseBtnCount } from "./redux/todoReducer";
 import { useDispatch, useSelector } from "react-redux";
+import "./App.css"; 
+
 const App = () => {
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.increase);
-  const array = ["A", "B", "C", "D", "E", "F", "G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Zf"];
+  const array = ["A", "B", "C", "D", "E", "F", "G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   return (
-    <div className={Style.root}>
-      <div className={Style.buttons}>
+    <div className="root"> 
+      <div className="buttons"> 
         {array.map((ele, ind) => {
           return (
             <Button
@@ -26,32 +28,9 @@ const App = () => {
         <table>
           <thead>
             <tr>
-              <th>A</th>
-              <th>B</th>
-              <th>C</th>
-              <th>D</th>
-              <th>E</th>
-              <th>F</th>
-              <th>G</th>
-              <th>H</th>
-              <th>I</th>
-              <th>J</th>
-              <th>K</th>
-              <th>L</th>
-              <th>M</th>
-              <th>N</th>
-              <th>O</th>
-              <th>P</th>
-              <th>Q</th>
-              <th>R</th>
-              <th>S</th>
-              <th>T</th>
-              <th>U</th>
-              <th>V</th>
-              <th>W</th>
-              <th>X</th>
-              <th>Y</th>
-              <th>Z</th>
+              {array.map((x)=>{
+                return <th key={x}>{x}</th> 
+              })}
               
             </tr>
           </thead>
